@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">CONSULTAS</h3>
+    </div>
+    <div class="card-body">
+        <form #myForm>
+            <div class="form-group">
+                <label for="">DISPOSITIVO</label>
+                <input type="text" class="form-control" aria-describedby="dispositivo" name="dispositivo" [(ngModel)]="newTask.dispositivo" >
+            </div>
+            <div class="form-group">
+                <label for="">PROBLEMA</label>
+                <textarea class="form-control" name="problema" [(ngModel)]="newTask.problema"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block" (click)="addTask()">ENVIAR</button>
+        </form>
+    </div>
+</div>

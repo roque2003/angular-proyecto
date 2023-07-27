@@ -1,0 +1,30 @@
+<app-list-tasks (sendPosition)="getPositions($event)"></app-list-tasks>
+
+<div class="modal fade mt-5 pt-5" id="editModal" tabindex="-1" role="dialog" aria-label="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Actualizar Revision</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="">Dispositivo</label>
+                        <input *ngIf="TaskFound" type="text" name="dispositivo" class="form-control" [(ngModel)]="TaskFound.dispositivo">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Problema</label>
+                        <textarea *ngIf="TaskFound" class="form-control" name="problema" [(ngModel)]="TaskFound.problema"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editTask()">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
